@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  ag_phx_pg:
+    # still need to `brew install postgresql` for the `pg` gem etc.
+    container_name: "ag_phx_pg"
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      # - "POSTGRES_PASSWORD=${DB_PASS}" # using an environment variable
+      - "POSTGRES_PASSWORD=test1234"
+    volumes:
+      # - ./pg:/docker-entrypoint-initdb.d/ # file
+      - local-data:/pg/docker-entrypoint-initdb.d/ # container
+
+volumes:
+  local-data:
