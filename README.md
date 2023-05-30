@@ -7,6 +7,7 @@ The changes are in `application.ex` where we set up `Goth` and in the `page_cont
 This setup should work for most Google API packages on hex.
 
 
-### The service credentials for Google APIs should look something like this for JSON file based keys
+### Service credentials 
+Service credentials for Google APIs should look something like this for JSON file based keys
 ![image](https://github.com/TylerSustare/phx_fire/assets/10850753/bd37344e-2cb1-4dbb-b480-93ad35eed07e)
 
