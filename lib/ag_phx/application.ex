@@ -14,12 +14,11 @@ defmodule AgPhx.Application do
 
     # Using the following method - from a file
     # instead of the JSON string in an ENV has the same result:
-    #  {:ok, contents} =
-    #     Path.join(File.cwd!(), "gcloud-key.json")
-    #     |> File.read()
+    # {:ok, contents} =
+    #   Path.join(File.cwd!(), "gcloud-key.json")
+    #   |> File.read()
 
-    #   credentials = Jason.decode!(contents)
-    IO.inspect(credentials)
+    # credentials = Jason.decode!(contents)
 
     source = {:service_account, credentials}
 

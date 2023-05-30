@@ -52,7 +52,7 @@ defmodule AgPhx.Firestore.DAO do
   def save(project, document) do
     database = "projects/#{project}/databases/(default)"
 
-    with {:ok, token} <- Goth.fetch(@datastore_auth_request_url),
+    with {:ok, token} <- Goth.fetch(AgPhx.Goth),
          conn <- Connection.new(token.token),
          {:ok, transaction} <- begin_transaction(conn, database),
          {:ok, request} <- prepare_commit_request(document, transaction),
