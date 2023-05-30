@@ -1,4 +1,4 @@
-defmodule AgPhx.Application do
+defmodule PhxFire.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -24,23 +24,23 @@ defmodule AgPhx.Application do
 
     children = [
       # Start the Telemetry supervisor
-      AgPhxWeb.Telemetry,
+      PhxFireWeb.Telemetry,
       # Start the Ecto repository
-      AgPhx.Repo,
+      PhxFire.Repo,
       # Start the PubSub system
-      {Phoenix.PubSub, name: AgPhx.PubSub},
+      {Phoenix.PubSub, name: PhxFire.PubSub},
       # Start Finch
-      {Finch, name: AgPhx.Finch},
+      {Finch, name: PhxFire.Finch},
       # Start the Endpoint (http/https)
-      AgPhxWeb.Endpoint,
-      # Start a worker by calling: AgPhx.Worker.start_link(arg)
-      # {AgPhx.Worker, arg}
-      {Goth, name: AgPhx.Goth, source: source}
+      PhxFireWeb.Endpoint,
+      # Start a worker by calling: PhxFire.Worker.start_link(arg)
+      # {PhxFire.Worker, arg}
+      {Goth, name: PhxFire.Goth, source: source}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: AgPhx.Supervisor]
+    opts = [strategy: :one_for_one, name: PhxFire.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -48,7 +48,7 @@ defmodule AgPhx.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    AgPhxWeb.Endpoint.config_change(changed, removed)
+    PhxFireWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

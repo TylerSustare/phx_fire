@@ -1,8 +1,8 @@
 version: "3.7"
 services:
-  ag_phx_pg:
+  phx_fire_pg:
     # still need to `brew install postgresql` for the `pg` gem etc.
-    container_name: "ag_phx_pg"
+    container_name: "phx_fire_pg"
     image: postgres:latest
     ports:
       - "5432:5432"

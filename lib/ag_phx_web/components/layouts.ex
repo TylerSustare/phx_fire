@@ -1,5 +1,5 @@
-defmodule AgPhxWeb.Layouts do
-  use AgPhxWeb, :html
+defmodule PhxFireWeb.Layouts do
+  use PhxFireWeb, :html
 
   embed_templates "layouts/*"
 end

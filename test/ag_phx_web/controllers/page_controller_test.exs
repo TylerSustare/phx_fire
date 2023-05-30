@@ -1,5 +1,5 @@
-defmodule AgPhxWeb.PageControllerTest do
-  use AgPhxWeb.ConnCase
+defmodule PhxFireWeb.PageControllerTest do
+  use PhxFireWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

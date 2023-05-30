@@ -7,17 +7,17 @@
 # General application configuration
 import Config
 
-config :ag_phx,
-  ecto_repos: [AgPhx.Repo]
+config :phx_fire,
+  ecto_repos: [PhxFire.Repo]
 
 # Configures the endpoint
-config :ag_phx, AgPhxWeb.Endpoint,
+config :phx_fire, PhxFireWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [
-    formats: [html: AgPhxWeb.ErrorHTML, json: AgPhxWeb.ErrorJSON],
+    formats: [html: PhxFireWeb.ErrorHTML, json: PhxFireWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: AgPhx.PubSub,
+  pubsub_server: PhxFire.PubSub,
   live_view: [signing_salt: "YXbpU3zs"]
 
 # Configures the mailer
@@ -27,7 +27,7 @@ config :ag_phx, AgPhxWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :ag_phx, AgPhx.Mailer, adapter: Swoosh.Adapters.Local
+config :phx_fire, PhxFire.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,

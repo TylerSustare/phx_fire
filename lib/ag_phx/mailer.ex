@@ -1,3 +1,3 @@
-defmodule AgPhx.Mailer do
-  use Swoosh.Mailer, otp_app: :ag_phx
+defmodule PhxFire.Mailer do
+  use Swoosh.Mailer, otp_app: :phx_fire
 end

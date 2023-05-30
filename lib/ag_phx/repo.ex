@@ -1,5 +1,5 @@
-defmodule AgPhx.Repo do
+defmodule PhxFire.Repo do
   use Ecto.Repo,
-    otp_app: :ag_phx,
+    otp_app: :phx_fire,
     adapter: Ecto.Adapters.Postgres
 end

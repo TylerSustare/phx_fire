@@ -1,4 +1,4 @@
-defmodule AgPhx.Firestore.DAO do
+defmodule PhxFire.Firestore.DAO do
   @moduledoc false
   alias GoogleApi.Firestore.V1.Api.Projects
   alias GoogleApi.Firestore.V1.Connection
@@ -52,7 +52,7 @@ defmodule AgPhx.Firestore.DAO do
   def save(project, document) do
     database = "projects/#{project}/databases/(default)"
 
-    with {:ok, token} <- Goth.fetch(AgPhx.Goth),
+    with {:ok, token} <- Goth.fetch(PhxFire.Goth),
          conn <- Connection.new(token.token),
          {:ok, transaction} <- begin_transaction(conn, database),
          {:ok, request} <- prepare_commit_request(document, transaction),

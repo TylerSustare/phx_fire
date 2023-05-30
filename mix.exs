@@ -1,9 +1,9 @@
-defmodule AgPhx.MixProject do
+defmodule PhxFire.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :ag_phx,
+      app: :phx_fire,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule AgPhx.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {AgPhx.Application, []},
+      mod: {PhxFire.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

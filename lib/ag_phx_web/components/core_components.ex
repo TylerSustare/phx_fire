@@ -1,4 +1,4 @@
-defmodule AgPhxWeb.CoreComponents do
+defmodule PhxFireWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -17,7 +17,7 @@ defmodule AgPhxWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import AgPhxWeb.Gettext
+  import PhxFireWeb.Gettext
 
   @doc """
   Renders a modal.
@@ -625,9 +625,9 @@ defmodule AgPhxWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(AgPhxWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(PhxFireWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(AgPhxWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(PhxFireWeb.Gettext, "errors", msg, opts)
     end
   end
 

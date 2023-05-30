@@ -1,5 +1,5 @@
-defmodule AgPhxWeb.PageController do
-  use AgPhxWeb, :controller
+defmodule PhxFireWeb.PageController do
+  use PhxFireWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,
@@ -8,7 +8,8 @@ defmodule AgPhxWeb.PageController do
     {:ok, now} = DateTime.now("Etc/UTC")
 
     d = %GoogleApi.Firestore.V1.Model.Document{
-      name: "projects/archery-guru/databases/(default)/documents/demo-elixir-firestore/123",
+      name:
+        "projects/<CHANGEME-to-your-project-id>/databases/(default)/documents/demo-elixir-firestore/123",
       createTime: now,
       updateTime: now,
       fields: %{
@@ -18,7 +19,7 @@ defmodule AgPhxWeb.PageController do
       }
     }
 
-    {:ok, res} = AgPhx.Firestore.DAO.save("archery-guru", d)
+    {:ok, res} = PhxFire.Firestore.DAO.save("<CHANGEME-to-your-project-id>", d)
     IO.inspect(res)
 
     render(conn, :home, layout: false)

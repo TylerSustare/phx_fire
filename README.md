@@ -1,18 +1,7 @@
-# AgPhx
+# PhxFire
 
-To start your Phoenix server:
+Super simple example of using Firestore in a Phoenix application.
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+The changes are in `application.ex` where we set up `Goth` and in the `page_controller.ex` where we send the request to Firestore.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+This setup should work for most Google API packages on hex.

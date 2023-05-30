@@ -1,12 +1,12 @@
-defmodule AgPhxWeb do
+defmodule PhxFireWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use AgPhxWeb, :controller
-      use AgPhxWeb, :html
+      use PhxFireWeb, :controller
+      use PhxFireWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule AgPhxWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: AgPhxWeb.Layouts]
+        layouts: [html: PhxFireWeb.Layouts]
 
       import Plug.Conn
-      import AgPhxWeb.Gettext
+      import PhxFireWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule AgPhxWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {AgPhxWeb.Layouts, :app}
+        layout: {PhxFireWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule AgPhxWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import AgPhxWeb.CoreComponents
-      import AgPhxWeb.Gettext
+      import PhxFireWeb.CoreComponents
+      import PhxFireWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule AgPhxWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: AgPhxWeb.Endpoint,
-        router: AgPhxWeb.Router,
-        statics: AgPhxWeb.static_paths()
+        endpoint: PhxFireWeb.Endpoint,
+        router: PhxFireWeb.Router,
+        statics: PhxFireWeb.static_paths()
     end
   end
 
