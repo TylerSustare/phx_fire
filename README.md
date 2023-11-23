@@ -1,6 +1,6 @@
 # PhxFire
 
-Super simple example of using Firestore in a Phoenix application.
+Super simple example of using Firebase (Firestore & FCM) in a Phoenix application.
 
 The changes are in `application.ex` where we set up `Goth` and in the `page_controller.ex` where we send the request to Firestore.
 
