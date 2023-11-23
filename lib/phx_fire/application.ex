@@ -2,6 +2,7 @@ defmodule PhxFire.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
+  alias Mix.Tasks.Phx
 
   use Application
 
@@ -35,7 +36,14 @@ defmodule PhxFire.Application do
       PhxFireWeb.Endpoint,
       # Start a worker by calling: PhxFire.Worker.start_link(arg)
       # {PhxFire.Worker, arg}
-      {Goth, name: PhxFire.Goth, source: source}
+      {Goth, name: PhxFire.Goth, source: source},
+      # For Pigeon.FCM
+      {PhxFire.FCM,
+       [
+         adapter: Pigeon.FCM,
+         project_id: "<CHANGEME-to-your-project-id>",
+         service_account_json: System.get_env("GOOGLE_APPLICATION_CREDENTIALS_JSON")
+       ]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

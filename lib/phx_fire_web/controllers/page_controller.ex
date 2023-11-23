@@ -19,6 +19,24 @@ defmodule PhxFireWeb.PageController do
       }
     }
 
+    test_token = "abc123"
+
+    notification = %{
+      title: "Test notification",
+      body: "Test notification"
+    }
+
+    data = %{
+      type: "foo",
+      type_id: "123",
+      messageId: "123",
+      messageTime: Time.to_iso8601(now)
+    }
+
+    n = Pigeon.FCM.Notification.new({:token, test_token}, notification, data)
+    IO.inspect(n)
+    PhxFire.FCM.push(n)
+
     {:ok, res} = PhxFire.Firestore.DAO.save("<CHANGEME-to-your-project-id>", d)
     IO.inspect(res)
 

@@ -8,7 +8,9 @@
       "type": "mix_task",
       "name": "mix phx.server",
       "request": "launch",
-      "projectDir": "${workspaceRoot}"
+      "projectDir": "${workspaceRoot}",
+      "task": "phx.server",
+      "exitAfterTaskReturns": false
     },
     {
       "type": "mix_task",

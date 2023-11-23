@@ -34,6 +34,7 @@ defmodule PhxFire.MixProject do
     [
       {:ecto_sql, "~> 3.6"},
       {:esbuild, "~> 0.7", runtime: Mix.env() == :dev},
+      {:pigeon, "~> 2.0.0-rc.1"},
       {:finch, "~> 0.13"},
       {:floki, ">= 0.30.0", only: :test},
       {:gettext, "~> 0.20"},
