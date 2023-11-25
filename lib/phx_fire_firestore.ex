@@ -1,4 +1,4 @@
-defmodule PhxFire.Firestore.DAO do
+defmodule PhxFire.Firestore do
   @moduledoc false
   alias GoogleApi.Firestore.V1.Api.Projects
   alias GoogleApi.Firestore.V1.Connection
@@ -67,5 +67,32 @@ defmodule PhxFire.Firestore.DAO do
         Logger.error("#{inspect(err)}")
         {:error, :datastore_persist_entity_failure}
     end
+  end
+
+  def get(id) do
+    database = "projects/<CHANGEME-to-your-project-id>/databases/(default)/documents/users/#{id}"
+
+    {:ok, token} = Goth.fetch(PhxFire.Goth)
+    conn = Connection.new(token.token)
+    {:ok, res} = Projects.firestore_projects_databases_documents_get(conn, database)
+    {:ok, res}
+  end
+
+  def query(_params) do
+    database = "projects/<CHANGEME-to-your-project-id>/databases/(default)/documents"
+    {:ok, token} = Goth.fetch(PhxFire.Goth)
+    conn = Connection.new(token.token)
+
+    q = %GoogleApi.Firestore.V1.Model.RunQueryRequest{
+      structuredQuery: %{
+        :from => %{:collectionId => "users"},
+        :limit => 3
+      }
+    }
+
+    {:ok, res} =
+      Projects.firestore_projects_databases_documents_run_query(conn, database, body: q)
+
+    {:ok, res}
   end
 end

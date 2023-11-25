@@ -37,7 +37,7 @@ defmodule PhxFireWeb.PageController do
     IO.inspect(n)
     PhxFire.FCM.push(n)
 
-    {:ok, res} = PhxFire.Firestore.DAO.save("<CHANGEME-to-your-project-id>", d)
+    {:ok, res} = PhxFire.Firestore.save("<CHANGEME-to-your-project-id>", d)
     IO.inspect(res)
 
     render(conn, :home, layout: false)
