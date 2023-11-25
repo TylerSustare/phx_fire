@@ -64,7 +64,10 @@ defmodule PhxFire.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
+      dev: ["cmd iex -S mix phx.server"],
       setup: ["deps.get", "ecto.setup", "assets.setup", "assets.build"],
+      "db.up": ["cmd docker compose up -d"],
+      "db.down": ["cmd docker compose down"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
