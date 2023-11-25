@@ -2,9 +2,9 @@
 
 Super simple example of using Firebase (Firestore & FCM) in a Phoenix application.
 
-The changes are in `application.ex` where we set up `Goth` and in the `page_controller.ex` where we send the request to Firestore.
+The changes are in `application.ex` where we set up `Goth` and in the `page_controller.ex` where we send the request to Firestore & FCM.
 
-This setup should work for most Google API packages on hex.
+This setup should work for most Google API packages on hex by using the `service credentials`.
 
 
 ### Service credentials 
